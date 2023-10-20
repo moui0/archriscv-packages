@@ -1,6 +1,8 @@
+diff --git PKGBUILD PKGBUILD
+index 59e101b..dacf06f 100644
 --- PKGBUILD
 +++ PKGBUILD
-@@ -18,6 +18,11 @@ options=(!lto)
+@@ -21,6 +21,11 @@ options=(!lto)
  
  build() {
    cd ${_pkgname}-${pkgver}
@@ -9,6 +11,6 @@
 +  sed -i "/patch.crates-io/a ring = { git = 'https://github.com/felixonmars/ring', branch = '0.16.20' }" Cargo.toml
 +  cargo update -p ring
 +
-   cargo build --release --locked
+   OPENSSL_NO_VENDOR=1 cargo build --release --locked
  }
  
