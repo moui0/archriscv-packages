@@ -1,0 +1,11 @@
+--- PKGBUILD
++++ PKGBUILD
+@@ -14,7 +14,7 @@ b2sums=('7d0efdaac3e9902ef9df564bf5041cb0975d67af4895ef9b14f3923561a7ab9c4599f42
+ 
+ prepare() {
+   cd "${pkgname}-${pkgver}"
+-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
++  cargo fetch --locked
+ }
+ 
+ build() {
